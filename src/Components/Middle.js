@@ -1,14 +1,13 @@
-import Header from "./Header";
 import Posts from "./Posts";
 import Recommended from "./Recommended";
-const HeroScreen = () =>{
+import Stories from "./Stories";
+const Middle = () =>{
     return(
         <div>
             {/*<a>header</a>*/}
-            <Header />
+            <Stories/>
             <Posts />
-            <Recommended />
         </div>
     )
 }
-export default HeroScreen;
+export default Middle;
