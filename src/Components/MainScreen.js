@@ -4,7 +4,6 @@ import RightColumn from "./RightColumn";
 const MainScreen = () =>{
     return (
         <div className="flex flex-row w-full">
-            <OptionsTab />
             <Middle />
             <RightColumn/>
         </div>
