@@ -6,6 +6,7 @@ import Profile from "./Components/Profile";
 import Posts from "./Components/Posts";
 import OptionsTab from "./Components/OptionsTab";
 import Body from "./Components/Body";
+import Reels from "./Components/Reels";
 
 const appRouter = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ const appRouter = createBrowserRouter([
                 path: "posts",
                 element: <Posts />,
             },
+            {
+                path: "reels",
+                element: <Reels />,
+            }
         ],
     },
 ]);

@@ -7,7 +7,7 @@ const Profile = () =>{
     return(
         <div>
             {/*<h1>Profile</h1>*/}
-            <div className="flex flex-row border-2 w-56 m-10 ml-[10rem] ">
+            <div className="flex flex-row border-2 w-56 m-10 ml-[10rem] font-semibold">
                 {/*upper half with info*/}
                 <img
                     src="https://www.pngarts.com/files/10/Default-Profile-Picture-Download-PNG-Image.png"/>

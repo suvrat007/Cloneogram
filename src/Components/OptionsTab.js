@@ -11,7 +11,7 @@ const OptionsTab = () =>{
                 <h3 className="mb-4"><Link to="/">Home</Link></h3>
                 <h3 className="mb-4">Search</h3>
                 <h3 className="mb-4">Notifications</h3>
-                <h3 className="mb-4">Reels</h3>
+                <h3 className="mb-4"><Link to="/reels">Reels</Link></h3>
 
                 <h3 className="mb-4"><Link to="/profile">Profile</Link></h3>
             </div>
