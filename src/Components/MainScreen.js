@@ -3,7 +3,7 @@ import OptionsTab from "./OptionsTab";
 import RightColumn from "./RightColumn";
 const MainScreen = () =>{
     return (
-        <div className="flex flex-row w-full">
+        <div className="flex flex-row w-full ">
             <Middle />
             <RightColumn/>
         </div>
