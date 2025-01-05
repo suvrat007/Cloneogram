@@ -2,7 +2,7 @@ import Posts from "./Posts";
 import Stories from "./Stories";
 const Middle = () =>{
     return(
-        <div>
+        <div className="ml-[3%]">
             <Stories/>
             <Posts />
         </div>

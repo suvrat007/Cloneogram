@@ -7,6 +7,8 @@ import Posts from "./Components/Posts";
 import OptionsTab from "./Components/OptionsTab";
 import Body from "./Components/Body";
 import Reels from "./Components/Reels";
+import {Provider} from "react-redux";
+import store from "./Utils/store";
 
 const appRouter = createBrowserRouter([
     {
@@ -34,9 +36,12 @@ const appRouter = createBrowserRouter([
 
 function App() {
     return (
-        <div>
-            <RouterProvider router={appRouter} />
-        </div>
+        <Provider store={store}>
+            <div>
+                <RouterProvider router={appRouter}/>
+            </div>
+        </Provider>
+
     );
 }
 

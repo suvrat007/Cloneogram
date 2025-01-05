@@ -1,18 +1,29 @@
 import {useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {toggleFollowing} from "../Utils/followSlice";
 
 const OnePost = () => {
     const [like,setLike] = useState("https://www.svgrepo.com/show/13666/heart.svg");
     const [save,setSave] = useState("https://www.svgrepo.com/show/505218/bookmark-outline.svg");
+    const dispatch = useDispatch();
+    function handleFollow (){
+        dispatch(toggleFollowing())
+    }
+    const isFollowing = useSelector(store=>store.follow.isFollowing);
 
     return(
         <div>
-            <div className="flex flex-col w-[30rem] mb-10 ml-[20%] mt-4">
-                <div className="flex flex-row border-2 border-gray-400 w-full">
+            <div className="flex flex-col w-[30rem] mb-10 ml-[20%] mt-4 border-b-2">
+                <div className="flex flex-row w-full">
                     {/*userid and picture    */}
                     <img src="https://www.pngarts.com/files/10/Default-Profile-Picture-Download-PNG-Image.png"
-                         className="w-14 rounded-full  m-2"/>
+                         className="w-12 rounded-full m-1"/>
                     <p className="flex items-center justify-center ">@username</p>
-
+                    <p
+                        className="flex items-center m-2 "
+                    onClick={()=>handleFollow()}>
+                        {isFollowing ? "Unfollow" : "Follow"}
+                    </p>
                 </div>
                 <div className="">
                     {/*posts*/}
@@ -20,9 +31,9 @@ const OnePost = () => {
                         src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                         className="w-full h-[35rem]"/>
                 </div>
-                <div className="flex flex-col border-2 border-gray-400 w-full border-b-gray-500">
+                <div className="flex flex-col w-full">
                     {/*like and comment*/}
-                    <div className="flex flex-row border-2 border-gray-400 ">
+                    <div className="flex flex-row ">
                         <img
                             onClick={() => {
                                 like === "https://www.svgrepo.com/show/13666/heart.svg" ? setLike("https://www.svgrepo.com/show/384408/favorite-heart-like-love-romance-valentine.svg") : setLike("https://www.svgrepo.com/show/13666/heart.svg");
@@ -40,7 +51,7 @@ const OnePost = () => {
                     </div>
                     <div className="">
                         <p className="m-2">200k likes</p>
-                        <input type="text" className="p-2  w-full" placeholder="Add Comment..."/>
+                        <input type="text" className="p-2  w-full focus:outline-none" placeholder="Add Comment..."/>
                     </div>
                 </div>
             </div>

@@ -1,15 +1,17 @@
 const MyProfileDisplay = () =>{
     return (
-        <div >
-            <div className="p-2 ml-10 m-2 border-4 border-gray-400 w-[20rem] h-[10rem] flex flex-row">
+        <div className="flex flex-col rounded-2xl border-2 mt-5">
+            <div className="flex flex-row w-[20rem]">
                 <img src="https://www.pngarts.com/files/10/Default-Profile-Picture-Download-PNG-Image.png"
-                className="rounded-full w-[4rem] border-2 border-gray-400 p-2 m-8"/>
-                <div className="p-2 m-2 justify-center items-center object-center ">
+                className="w-[4rem] m-2 "/>
+                <div className=" justify-center flex flex-col text-center ">
                     <p>@usename</p>
                     <p>User Name</p>
                 </div>
             </div>
+
         </div>
+
     )
 }
 export default MyProfileDisplay;

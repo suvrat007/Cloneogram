@@ -6,7 +6,7 @@ const Posts = () =>{
     const posts = Array.from({ length: num });
 
     return (
-        <div className="border-2 border-gray-400 ml-10 ">
+        <div className=" ml-10 ">
             {posts.map((post, index) => (<OnePost/>))}
 
         </div>

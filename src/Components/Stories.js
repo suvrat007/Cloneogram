@@ -7,7 +7,7 @@ const Stories = () =>{
         const stories = Array.from({ length: num });
 
         return (
-            <div className="border-2 border-gray-200 w-[50rem]  overflow-scroll p-2 mt-2 ml-10">
+            <div className=" w-[50rem]  overflow-scroll p-2 mt-2 ml-10">
                 <div className="flex flex-row">{stories.map((index) => (
                     <OneStory/>
                 ))}
