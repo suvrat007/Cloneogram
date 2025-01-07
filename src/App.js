@@ -19,7 +19,7 @@ const appRouter = createBrowserRouter([
             element: <MainScreen/>
             }
             ,{
-                path: "profile",
+                path: "profile/:id",
                 element: <Profile />,
             },
             {

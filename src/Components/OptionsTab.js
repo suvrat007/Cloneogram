@@ -44,7 +44,7 @@ const OptionsTab = () =>{
                 </div>
                 <div className="flex flex-row w-8">
                 <img src={prof}/>
-                    <h3 className="mb-4 pt-2 m-2"><Link to="/profile">Profile</Link></h3>
+                    <h3 className="mb-4 pt-2 m-2"><Link to="/profile/69">Profile</Link></h3>
                 </div>
 
 

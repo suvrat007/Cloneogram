@@ -23,11 +23,10 @@ const Posts = () =>{
 
     }
 
-    // console.log("this " + listOfUsers[0]?.name?.first);
+    // console.log(listOfUsers);
     return (
         <div className=" ml-10 ">
-            {listOfUsers.map((post, index) => (<OnePost id={listOfUsers[index].id} username={listOfUsers[index]?.login?.username} name={listOfUsers[index]?.name?.first + " " +listOfUsers[index]?.name?.last} pic={listOfUsers[index]?.picture?.medium} />))}
-
+            {listOfUsers.map((post,index) => (<OnePost userData = {listOfUsers[index]}/>))}
         </div>
     )
 }

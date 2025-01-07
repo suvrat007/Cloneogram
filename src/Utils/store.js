@@ -1,11 +1,11 @@
 import {configureStore} from "@reduxjs/toolkit";
 import searchSlice from "./searchSlice";
-import followSlice from "./followSlice";
+import followingListSlice from "./followingListSlice";
 
 const store = configureStore({
     reducer: {
         search: searchSlice,
-        follow: followSlice,
+        following: followingListSlice,
     },
 })
 export default store;

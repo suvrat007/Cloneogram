@@ -1,6 +1,6 @@
 const OneStory = ({pic , username}) =>{
 
-    console.log(pic);
+    // console.log(pic);
     return (
 
         <div className="m-2 ">
