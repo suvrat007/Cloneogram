@@ -1,11 +1,13 @@
-const OneStory = () =>{
+const OneStory = ({pic , username}) =>{
 
+    console.log(pic);
     return (
-        <div className="p-2">
+
+        <div className="m-2 ">
             <img
-                src="https://www.pngarts.com/files/10/Default-Profile-Picture-Download-PNG-Image.png"
-                className="w-[4rem] justify-center m-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"/>
-            <a className="justify-center items-center">@username</a>
+                src={pic}
+                className="w-[4rem] flex items-center m-2 p-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"/>
+            <a className="flex items-center text-xs">{username}</a>
 
         </div>
     )
