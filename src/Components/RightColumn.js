@@ -43,7 +43,6 @@ const RightColumn = () => {
             <h3 className="text-lg mt-2 p-2">Recommended</h3>
             {visibleUsers.map((user, index) => (
                 <Recommended  key={index} user={user}/>))}
-
         </div>
     )
 }

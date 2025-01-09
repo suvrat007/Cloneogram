@@ -1,6 +1,7 @@
     import {useCallback, useState} from "react";
     import {useDispatch, useSelector} from "react-redux";
     import {addFollowing, switchButton, unfollow} from "../Utils/followingListSlice";
+    import {Link} from "react-router-dom";
 
     const OnePost = ({userData}) => {
         const [like,setLike] = useState("https://www.svgrepo.com/show/13666/heart.svg");
@@ -25,7 +26,7 @@
                         {/*userid and picture    */}
                         <img src={userData?.picture?.medium}
                              className="w-12 rounded-full m-1"/>
-                        <p className="flex items-center justify-center ml-2">{userData?.login?.username}</p>
+                        <p className="flex items-center justify-center ml-2"><Link to={"profile/"+userData?.id}>{userData?.login?.username}</Link></p>
                         {(isFollowing.some(id => id === userData.id)) ? <p
                                 className="flex items-center m-2 cursor-pointer "
                                 onClick={() => handleUnfollow(userData.id)}>

@@ -5,10 +5,12 @@ const AllUserListSlice = createSlice({
     name: "AllUserList",
     initialState: {
         users: [],
+        fetched: false,
     },
     reducers: {
         AddUsers: (state, action) => {
             state.users.push(action.payload);
+            state.fetched = true;
         }
     }
 })

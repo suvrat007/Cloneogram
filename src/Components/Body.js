@@ -1,21 +1,18 @@
 import {Outlet} from "react-router-dom";
 import OptionsTab from "./OptionsTab";
-import {useEffect, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {AddUsers} from "../Utils/AllUserListSlice";
 
 const Body = () =>{
     const dispatch = useDispatch();
     const userList = useSelector((store) => store.userList.users); // Access users from Redux store
+    const fetched = useSelector((store) => store.userList.fetched); // Access users from Redux store
 
-    useEffect(() => {
-        // Fetch data only if userList is empty
-        if (userList.length === 0) {
-            fetchData();
-        }
-    }, []);
+    // console.log("render")
 
-    const fetchData = async () => {
+
+    const fetchData = useCallback(async () => {
         try {
             const data = await fetch(
                 "https://api.freeapi.app/api/v1/public/randomusers?page=1&limit=100"
@@ -28,7 +25,15 @@ const Body = () =>{
         } catch (error) {
             console.error("Error fetching data:", error);
         }
-    };
+    },[dispatch])
+
+    useEffect(() => {
+        // Fetch data only if userList is empty
+        if (!fetched) {
+            fetchData();
+        }
+    }, [fetched,fetchData]);
+
     return (
         <div className="flex flex-row">
             <div className="w-2/12">

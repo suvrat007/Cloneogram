@@ -43,16 +43,16 @@ const SearchTab = () => {
     }
 
     return(
-        <div className="h-screen border-r-2 flex flex-col text-xl p-6 mr-10 fixed h-screen ">
-            <div className="flex flex-row justify-center m-5 w-[10rem]">
+        <div className="h-screen border-r-2 flex flex-col text-xl p-4 fixed bg-blur w-[22%]">
+            <div className="flex flex-row m-5 w-full">
                 <input type="text"
                        placeholder="enter first name"
                        value={searchQuery}
                        onChange={handleSearchFunc}
-                       className="border-2 pl-4 pb-1 ml-10 rounded-2xl"/>
+                       className="border-2 pl-4 pb-1 rounded-xl h-8 flex text-center"/>
                 <img src={cancel}
                      onClick={() => handleSearchTab()}
-                     className="h-8 w-6 cursor-pointer"/>
+                     className="h-8 w-6 ml-2 cursor-pointer "/>
             </div>
             <div className="flex flex-col">
                 {results.length > 0 ? (

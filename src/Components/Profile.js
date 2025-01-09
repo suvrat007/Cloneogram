@@ -10,15 +10,16 @@ const Profile = () =>{
     const pics = Array.from({ length: num });
 
     const isFollowing = useSelector(store => store.following.followingList); // for number of following and ids of following2
-    const userList = useSelector(store => store.userList.users); // fetch list of all users from reduc store
-    // const [display, setDisplay] = useState(false);
+    const userList = useSelector(store => store.userList.users); // fetch list of all users from redux store
+
+    const [display, setDisplay] = useState(false);
 
     const {id} = useParams(); // takes dynamic part of url
     const data =useUserData(id); // hook for data extractio
 
 
 
-    // console.log(userList[0]);
+    console.log(userList);
     return (
         <div className="flex flex-col ml-[5%]">
             {/*<h1>Profile</h1>*/}
@@ -41,9 +42,10 @@ const Profile = () =>{
                         </ul>
                         <ul className="flex flex-col p-2 m-2 cursor-pointer">
                             <li>{isFollowing.length}</li>
-                            <li>Following</li>
-                        </ul>
+                            {/*<li onClick={setDisplay(prev => !prev)}>Following</li>*/}
+                            <li >Following</li>
 
+                        </ul>
                     </ul>
                     <li>{data?.name?.first + " " + data?.name?.last}</li>
                     <li className="text-xs">{data?.location?.city}, {data?.location?.state}, {data?.location?.country} </li>
@@ -66,7 +68,7 @@ const Profile = () =>{
 
 
             </div>
-            <div className="flex flex-row flex-wrap w-[95%] grid grid-cols-3">
+            <div className="w-[95%] grid grid-cols-3">
                 {pics.map((pic, index) => (<img
                     src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                     className="p-2 h-[25rem] w-[25rem]"/>))}
