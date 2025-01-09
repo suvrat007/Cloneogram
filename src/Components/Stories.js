@@ -22,11 +22,11 @@ const Stories = () =>{
                 }
 
         }
-        // console.log(listOfUsers[0]?.picture?.large);
+        // console.log(listOfUsers);
         return (
             <div className=" w-[50rem] overflow-scroll p-2 mt-2 ml-10">
                 <div className="flex flex-row">{listOfUsers.map((post,index) => (
-                    <OneStory pic={listOfUsers[index]?.picture?.medium} username={listOfUsers[index]?.login?.username}/>
+                    <OneStory user={listOfUsers[index]}/>
                 ))}
                 </div>
             </div>

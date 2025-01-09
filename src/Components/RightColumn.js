@@ -15,7 +15,7 @@ const RightColumn = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentRange((prevRange) => (prevRange + 5) % listOfUsers.length); // Move by 5 and loop back
-        }, 10000);
+        }, 100000);
 
         return () => clearInterval(interval); // Clean up interval on component unmount
     }, [listOfUsers]);

@@ -2,7 +2,7 @@ import Profile from "./Profile";
 import {Link} from "react-router-dom";
 
 const Recommended = ({user}) =>{
-    // console.log(user)
+    console.log(user)
 
     return (
         <div>
